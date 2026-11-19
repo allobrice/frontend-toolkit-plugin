@@ -1,6 +1,6 @@
 ---
 name: reviewing-code
-description: Revue de code complète d'une PR GitHub ou d'un dossier local, quel que soit le repo (ILokYou-Site, Front-Disconnected, Front-Sequoia…). Combine /code-review, superpowers:requesting-code-review, l'agent code-reviewer, writing-clean-code et les skills de stack détectés (Vue, TS, Nuxt 4, SCSS), plus des audits en option (-seo, -perf, -archi, -a11y). Pour une PR, publie une review GitHub (synthèse et commentaires inline). Pour un dossier, produit un rapport markdown local.
+description: Revue de code complète d'une PR GitHub ou d'un dossier local, quel que soit le repo. Combine /code-review, superpowers:requesting-code-review, l'agent code-reviewer, writing-clean-code et les skills de stack détectés (Vue, TS, Nuxt 4, SCSS), plus des audits en option (-seo, -perf, -archi, -a11y). Pour une PR, publie une review GitHub (synthèse et commentaires inline). Pour un dossier, produit un rapport markdown local.
 argument-hint: <url-pr-github | dossier> [-seo] [-perf] [-archi] [-a11y] [--no-post] [--level low|medium|high|xhigh]
 disable-model-invocation: false
 allowed-tools: Bash(node ${CLAUDE_SKILL_DIR}/scripts/*), Bash(gh pr view:*), Bash(gh pr diff:*), Bash(git -C ~/.cache/reviewing-code/*), Read(~/.cache/reviewing-code/**), Read(${CLAUDE_SKILL_DIR}/**)
