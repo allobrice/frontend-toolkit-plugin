@@ -1,7 +1,7 @@
 {
   "$schema": "https://json.schemastore.org/claude-code-plugin-manifest.json",
   "name": "frontend-toolkit",
-  "version": "0.3.0",
+  "version": "0.4.0",
   "description": "Generic frontend tooling for AlloVoisins: Vue/Nuxt/TS/JS/SCSS development guides, clean code, UI/UX design, multi-lens code review, accessibility/performance/SEO/architecture audits, Docker and GitHub Actions CI/CD. Framework-agnostic, reusable outside AlloVoisins.",
   "author": { "name": "Brice" },
   "license": "UNLICENSED"
