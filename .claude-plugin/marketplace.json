@@ -1,0 +1,12 @@
+{
+  "$schema": "https://json.schemastore.org/claude-code-marketplace.json",
+  "name": "frontend-toolkit-marketplace",
+  "owner": { "name": "Brice" },
+  "plugins": [
+    {
+      "name": "frontend-toolkit",
+      "source": "./",
+      "description": "Generic frontend tooling: Vue/Nuxt/TS/JS/SCSS guides, clean code, UI/UX, code review, a11y/perf/SEO/architecture audits, Docker and CI/CD."
+    }
+  ]
+}
