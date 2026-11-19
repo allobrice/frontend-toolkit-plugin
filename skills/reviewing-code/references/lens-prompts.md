@@ -1,7 +1,8 @@
 # Prompts des lentilles
 
 Chaque prompt commence par le **socle du mode** (`context.mode`) : socle PR ou socle dossier. On
-y remplace les `{…}` par les valeurs du `context.json`, puis on ajoute le bloc propre à la
+y remplace les `{…}` par les valeurs du `context.json` (et `{skillDir}` / `{skillsRoot}` par les
+chemins absolus du skill et du dossier qui contient les skills), puis on ajoute le bloc propre à la
 lentille, dans sa variante « mode dossier » quand elle existe.
 
 ## Socle PR (`mode: "pr"`, en tête de chaque prompt)
@@ -35,7 +36,7 @@ un finding (`category: conventions`) qui cite la rule.
 Tu ne lances pas de sous-agent. Tu n'écris rien sur GitHub.
 
 Sortie : écris {findingsDir}/{lentille}.json au format décrit dans
-~/.claude/skills/reviewing-code/references/findings-schema.md (lis-le d'abord), puis ta réponse
+{skillDir}/references/findings-schema.md (lis-le d'abord), puis ta réponse
 finale tient en une ligne : `OK <n> findings → <chemin>`.
 ```
 
@@ -70,7 +71,7 @@ répété dans plusieurs fichiers donne un seul finding, qui liste les occurrenc
 Tu ne lances pas de sous-agent. Tu n'écris rien ailleurs que dans {findingsDir}.
 
 Sortie : écris {findingsDir}/{lentille}.json au format décrit dans
-~/.claude/skills/reviewing-code/references/findings-schema.md (lis-le d'abord, règles du mode
+{skillDir}/references/findings-schema.md (lis-le d'abord, règles du mode
 dossier), puis ta réponse finale tient en une ligne : `OK <n> findings → <chemin>`.
 ```
 
@@ -140,7 +141,7 @@ Critical → P0, Important → P1, Minor → P2 ou P3.
 
 ```
 Lentille « clean-code ». Invoque d'abord le skill `writing-clean-code` (outil Skill). S'il est
-indisponible, lis ~/.claude/skills/writing-clean-code/SKILL.md et ses références utiles. Pars des
+indisponible, lis {skillsRoot}/writing-clean-code/SKILL.md et ses références utiles. Pars des
 symptômes visibles dans le diff (fonctions longues, duplication, conditionnels imbriqués,
 couplage, nommage, testabilité) et ne propose un pattern que s'il résout un symptôme constaté.
 Pas de refactoring spéculatif.
@@ -152,7 +153,7 @@ Pas de refactoring spéculatif.
 
 ```
 Lentille « stack ». Invoque les skills suivants (outil Skill ; s'ils sont indisponibles, lis
-~/.claude/skills/<nom>/SKILL.md) : {stack.skills}.
+{skillsRoot}/<nom>/SKILL.md) : {stack.skills}.
 Ne revois que ces fichiers : {stack.frontFiles}.
 Cherche les erreurs propres au framework : réactivité Vue (perte de réactivité, watch/computed
 mal employés, props mutées, fuites de listeners), typage TS (any, assertions non sûres, types
@@ -167,7 +168,7 @@ Rien de ce qui relève de la qualité générale : d'autres lentilles s'en charg
 
 ```
 Lentille « {flag} ». Invoque le skill `{skill}` (outil Skill ; s'il est indisponible, lis
-~/.claude/skills/{skill}/SKILL.md et les références qu'il désigne).
+{skillsRoot}/{skill}/SKILL.md et les références qu'il désigne).
 IMPORTANT : c'est un audit **du diff de la PR** (en mode dossier : **des fichiers du dossier
 revu**), pas du projet entier. Applique la grille du skill
 au seul code modifié, et à ce qu'il impacte directement (le composant parent qui rend un composant

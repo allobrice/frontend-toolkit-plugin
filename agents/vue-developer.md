@@ -102,7 +102,7 @@ décorateur de chargement.
 Quand un pattern est réellement justifié :
 
 - **En Vue / composables** → skill `developing-vue`, puis
-  `~/.claude/skills/developing-vue/references/composable-patterns.md`
+  sa référence `references/composable-patterns.md` (relative au dossier du skill)
 - **Hors Vue** (TS/JS pur, classes, SOLID, code smells) → skill `writing-clean-code`
 
 Tu n'annotes pas un `@pattern` dans les fichiers : un nom de composable explicite suffit.

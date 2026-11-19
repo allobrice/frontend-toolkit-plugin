@@ -3,14 +3,15 @@ name: reviewing-code
 description: Revue de code complète d'une PR GitHub ou d'un dossier local, quel que soit le repo (ILokYou-Site, Front-Disconnected, Front-Sequoia…). Combine /code-review, superpowers:requesting-code-review, l'agent code-reviewer, writing-clean-code et les skills de stack détectés (Vue, TS, Nuxt 4, SCSS), plus des audits en option (-seo, -perf, -archi, -a11y). Pour une PR, publie une review GitHub (synthèse et commentaires inline). Pour un dossier, produit un rapport markdown local.
 argument-hint: <url-pr-github | dossier> [-seo] [-perf] [-archi] [-a11y] [--no-post] [--level low|medium|high|xhigh]
 disable-model-invocation: false
-allowed-tools: Bash(node ~/.claude/skills/reviewing-code/scripts/*), Bash(node /home/*/.claude/skills/reviewing-code/scripts/*), Bash(gh pr view:*), Bash(gh pr diff:*), Bash(git -C ~/.cache/reviewing-code/*), Read(~/.cache/reviewing-code/**), Read(~/.claude/skills/**)
+allowed-tools: Bash(node ${CLAUDE_SKILL_DIR}/scripts/*), Bash(gh pr view:*), Bash(gh pr diff:*), Bash(git -C ~/.cache/reviewing-code/*), Read(~/.cache/reviewing-code/**), Read(${CLAUDE_SKILL_DIR}/**)
 ---
 
 # /reviewing-code : revue multi-lentilles d'une PR GitHub ou d'un dossier
 
 Arguments reçus : `$ARGUMENTS`
 
-`S = ~/.claude/skills/reviewing-code` désigne le dossier de ce skill.
+`S = ${CLAUDE_SKILL_DIR}` désigne le dossier de ce skill (chemin absolu, valable en installation
+plugin comme au scope utilisateur).
 
 **Deux modes**, que le script déduit de la cible :
 
@@ -23,7 +24,7 @@ Arguments reçus : `$ARGUMENTS`
 ## 1. Préparer
 
 ```bash
-node ~/.claude/skills/reviewing-code/scripts/prepare.mjs $ARGUMENTS --out <scratchpad>/reviewing-code-<repo>-<n|dossier>
+node ${CLAUDE_SKILL_DIR}/scripts/prepare.mjs $ARGUMENTS --out <scratchpad>/reviewing-code-<repo>-<n|dossier>
 ```
 
 `<scratchpad>` est le dossier scratchpad de la session ; sans scratchpad, on omet `--out`. Le
@@ -53,7 +54,8 @@ contient que du backend s'arrête dès la préparation.
 - un appel `Agent` par lentille de `context.lenses` sauf `code-review`. Les prompts sont dans
   `S/references/lens-prompts.md` : le **socle du mode** (`context.mode`) plus le bloc de la
   lentille (variante du mode s'il y en a une), avec les `{…}` remplacés par les valeurs du
-  `context.json`. Le prompt est complet, aucun renvoi à cette conversation ;
+  `context.json`, `{skillDir}` par le chemin absolu de `S` et `{skillsRoot}` par celui de son
+  dossier parent. Le prompt est complet, aucun renvoi à cette conversation ;
 - pour la lentille `code-review` :
   - **mode PR** : l'appel `Skill` à **`code-review`**, args `<context.level> <pr.url>`, **sans**
     `--comment` (c'est cette skill qui publie, pas `/code-review`). Il revoit toute la PR, backend
@@ -78,7 +80,7 @@ du scénario.
 
 Le script `S/scripts/consolidate.mjs` fait la partie mécanique. On ne garde que le jugement.
 
-1. **Propositions** : `node S/scripts/consolidate.mjs {contextFile} --propose`. Le script lit les
+1. **Propositions** : `node ${CLAUDE_SKILL_DIR}/scripts/consolidate.mjs {contextFile} --propose`. Le script lit les
    `{findingsDir}/*.json` et applique les filtres de périmètre : fichiers backend, fichiers hors
    du dossier revu, P0 en confiance low. Il numérote chaque finding `lentille#i` et imprime :
    - les lentilles en échec, à signaler sans les relancer ;
@@ -109,7 +111,7 @@ Le script `S/scripts/consolidate.mjs` fait la partie mécanique. On ne garde que
 
    Dans un groupe, sauf indication contraire, le script retient la sévérité la plus haute, le
    `body` le plus complet et la suggestion la plus précise. Il note aussi les lentilles d'origine.
-4. **Application** : `node S/scripts/consolidate.mjs {contextFile} --apply {outDir}/merge.json`.
+4. **Application** : `node ${CLAUDE_SKILL_DIR}/scripts/consolidate.mjs {contextFile} --apply {outDir}/merge.json`.
    Le script trie les findings de P0 à P3 puis par fichier, et écrit `{outDir}/consolidated.json`
    ainsi que la sortie du mode :
    - **mode PR** : `{outDir}/review.json` (`{ body, comments }`). La synthèse contient le verdict
@@ -136,7 +138,7 @@ corriger un point, on retouche `merge.json`, avec un `title` ou une `note`, et o
 
 ### Mode PR : aperçu, puis publication
 
-1. `node S/scripts/post-review.mjs {contextFile} {outDir}/review.json --dry-run` : on récupère le
+1. `node ${CLAUDE_SKILL_DIR}/scripts/post-review.mjs {contextFile} {outDir}/review.json --dry-run` : on récupère le
    nombre de commentaires inline et le nombre de remarques basculées dans le corps.
 2. On montre à l'utilisateur la synthèse, puis la liste des commentaires inline
    (`sévérité path:line titre`).
@@ -145,7 +147,7 @@ corriger un point, on retouche `merge.json`, avec un `title` ou une `note`, et o
 4. Sinon on demande confirmation par `AskUserQuestion`, puisqu'une review GitHub notifie l'auteur
    et les reviewers. Les options : « Publier », « Publier sans les P3 », « Ne pas publier ».
    **Rien ne se publie sans cet accord.**
-5. Après accord : `node S/scripts/post-review.mjs {contextFile} {outDir}/review.json`. Le script
+5. Après accord : `node ${CLAUDE_SKILL_DIR}/scripts/post-review.mjs {contextFile} {outDir}/review.json`. Le script
    imprime l'URL de la review, qu'on transmet. Si GitHub renvoie une 422, on lit l'erreur, on
    bascule les commentaires fautifs dans le corps et on republie une seule fois.
 
@@ -157,7 +159,7 @@ puis la liste `sévérité path:line titre` de tous les findings, et enfin le **
 
 ## 6. Nettoyer
 
-`node S/scripts/cleanup.mjs {contextFile}` retire le worktree en mode PR, et n'a aucun effet en
+`node ${CLAUDE_SKILL_DIR}/scripts/cleanup.mjs {contextFile}` retire le worktree en mode PR, et n'a aucun effet en
 mode dossier. Le clone partiel reste dans `~/.cache/reviewing-code/` et accélère les revues
 suivantes du même repo.
 
