@@ -257,6 +257,7 @@ Consulter ces fichiers pour les patterns détaillés :
 | [references/vue-router.md](references/vue-router.md) | Navigation guards, lazy loading routes, meta, transitions, scroll behavior | Routing, navigation, guards, middleware |
 | [references/migration-vue2-vue3.md](references/migration-vue2-vue3.md) | Breaking changes, @vue/compat, stratégie de migration progressive | Migration de Vue 2 vers Vue 3 |
 | [references/anti-patterns.md](references/anti-patterns.md) | Erreurs courantes, perte de réactivité, mauvais usages de watch/computed | Revue de code, debugging, refactoring |
+| [references/composable-patterns.md](references/composable-patterns.md) | Patterns GoF adaptés aux composables (Strategy, Adapter, Decorator, Chain of Responsibility, Command/Memento, state machine, event bus) | Logique réutilisable complexe, composable qui grossit, choix d'une structure |
 
 ## Conventions de code
 
