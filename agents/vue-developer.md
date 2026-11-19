@@ -1,7 +1,7 @@
 ---
 name: vue-developer
 description: Implémente et refactore le code front Vue 3.5 / Nuxt 4 / TypeScript strict — composants, composables, stores Pinia, styles SCSS, tests Vitest. À utiliser pour toute écriture ou correction de code front, y compris l'application des correctifs issus des rapports d'audit (a11y, perf, SEO, runtime-bug-reporter). Ne pas utiliser pour un audit ou une revue seuls : ce sont les skills auditing-* et l'agent code-reviewer.
-tools: Read, Write, Edit, Bash, Glob, Grep, Skill, mcp__figma__get_design_context, mcp__figma__get_screenshot
+tools: Read, Write, Edit, Bash, Glob, Grep, Skill, mcp__plugin_figma_figma__create_session, mcp__plugin_figma_figma__get_design_context, mcp__plugin_figma_figma__get_screenshot
 model: inherit
 color: green
 ---
