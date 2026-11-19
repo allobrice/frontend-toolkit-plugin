@@ -18,11 +18,10 @@ Les agents de test Playwright (`playwright-test-{planner,generator,healer}`) et 
 
 ## Contenu
 
-**Agents (3) — délégués**
+**Agents (2) — délégués**
 - `vue-developer` — implémente et refactore le code Vue 3.5 / Nuxt 4 / TS strict, y compris les
   correctifs issus des audits. Peut lire une maquette via le plugin Figma officiel s'il est installé.
 - `code-reviewer` — revue qualité, sécurité et maintenabilité.
-- `test-runner-fixer` — lance les tests touchés par un changement et corrige les échecs.
 
 **Skills — développement (5)**
 `developing-vue` · `developing-with-nuxt4` · `developing-typescript` · `developing-javascript` ·
