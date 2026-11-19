@@ -16,7 +16,7 @@
 //                       "path"?: "…", "line"?: 11, "start_line"?: 8, "body_from"?: "stack#2",
 //                       "note"?: "Remarque de consolidation (vérification, rétrogradation…)" } ],
 //      "drop":      [ { "id": "superpowers#14", "reason": "confiance faible" } ],
-//      "override":  { "code-reviewer#2": { "severity": "P3", "note": "…" } },
+//      "override":  { "clean-code#2": { "severity": "P3", "note": "…" } },
 //      "strengths": [ "point fort markdown", … ]     (3 max)
 //    }
 //    Écrit {outDir}/consolidated.json, puis la sortie du mode :

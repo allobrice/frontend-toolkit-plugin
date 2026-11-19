@@ -90,24 +90,6 @@ low. Nombre maximal selon le niveau : low 10, medium 15, high et xhigh 25. Le ch
 "code-review".
 ```
 
-## code-reviewer
-
-`subagent_type: code-reviewer`. Le socle, puis :
-
-```
-Lentille « code-reviewer » : revue générale (qualité, sécurité, maintenabilité, design patterns).
-Base de revue pour tes règles REVIEW.md : {baseSha}. Exécute tes commandes git avec
-`git -C {worktree}`.
-```
-
-Variante mode dossier, à la place du bloc ci-dessus :
-
-```
-Lentille « code-reviewer » : revue générale (qualité, sécurité, maintenabilité, design patterns)
-du code existant, pas d'un diff. Ignore les étapes de ta procédure qui partent de `git diff` :
-lis directement les fichiers listés, en lecture seule.
-```
-
 ## superpowers
 
 `subagent_type: general-purpose`. Le socle, puis le contenu du template

@@ -324,7 +324,7 @@ function preparePr(args) {
 }
 
 function lensesFor(stack, audits) {
-  const lenses = ['code-review', 'code-reviewer', 'superpowers', 'clean-code'];
+  const lenses = ['code-review', 'superpowers', 'clean-code'];
   if (stack.skills.length) lenses.push('stack');
   for (const a of audits) lenses.push(a);
   return lenses;
