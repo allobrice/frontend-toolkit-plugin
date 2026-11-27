@@ -107,6 +107,8 @@ classes ; les fonctions d'ordre supérieur remplacent Strategy, Decorator et Tem
 - **Vue / réactivité** — les patterns qui impliquent `ref`, `computed`, composables ou cycle de vie
   vivent dans `developing-vue`, référence `composable-patterns.md`. Cette skill-ci est agnostique du
   framework : TS/JS pur, back Node compris.
+- **React / hooks** — les patterns qui impliquent état, effets, hooks custom ou composition de
+  composants vivent dans `developing-react`, référence `hook-patterns.md`.
 - **Typage avancé** (génériques, inférence, types conditionnels) → `developing-typescript`.
 - **Conventions d'un dépôt** (nommage, structure de dossiers, gates CI) → le `CLAUDE.md` du projet,
   qui prime toujours sur les recommandations générales de cette skill.

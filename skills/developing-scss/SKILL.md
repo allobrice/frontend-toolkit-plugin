@@ -1,8 +1,8 @@
 ---
 name: developing-scss
 description: >
-  Expert SCSS senior pour tout code de style : composants Vue/Nuxt, feuilles de
-  style globales, design systems, tokens, architecture CSS. Utiliser
+  Expert SCSS senior pour tout code de style : composants Vue/Nuxt, composants
+  React en CSS Modules (*.module.scss), feuilles de style globales, design systems, tokens, architecture CSS. Utiliser
   SYSTÉMATIQUEMENT dès qu'il y a du SCSS, du CSS, du style, des mixins, des
   variables, des tokens, une charte graphique, un design system, ou une demande
   de refactoring / organisation du style. Déclencher aussi pour des questions sur
