@@ -8,7 +8,8 @@ description: >
   de refactoring / organisation du style. Déclencher aussi pour des questions sur
   BEM, utility-first, responsive, theming sombre/clair, ou l'organisation des
   fichiers styles. Ne pas attendre une mention explicite de SCSS — si le contexte
-  implique du rendu visuel ou du code de style, utiliser ce skill.
+  implique du rendu visuel ou du code de style web, utiliser ce skill. Pas pour les styles
+  React Native / Expo (StyleSheet, thème typé) : c'est developing-react-native.
 ---
 
 # SCSS Expert — Senior Patterns & Best Practices

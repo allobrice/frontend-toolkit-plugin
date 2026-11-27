@@ -11,7 +11,8 @@ description: >
   Vite + React. Déclencher aussi sur : "composant React", "hook custom", "refactore ce composant",
   "migre vers React 19", "trop de useEffect", "re-renders", "prop drilling", "formulaire React",
   "revue de code React", "bonnes pratiques React". Périmètre : React côté client (Vite SPA) ;
-  pour Next.js, combiner avec la skill developing-with-nextjs.
+  pour Next.js, combiner avec la skill developing-with-nextjs. Pas pour React Native / Expo
+  (app mobile, imports react-native) : c'est developing-react-native.
 ---
 
 # React 19+ — code de production
@@ -198,4 +199,5 @@ Tokens, mixins, responsive, thème : skill `developing-scss`.
 - **Code smells, SOLID, patterns hors React** → `writing-clean-code`.
 - **JavaScript pur, Node, sécurité JS** → `developing-javascript`.
 - **Next.js** (RSC, Server Actions, App Router, cache) → `developing-with-nextjs`.
+- **React Native / Expo** → `developing-react-native` (qui renvoie ici pour le socle React).
 - **Conventions du dépôt** → le `CLAUDE.md` du projet, qui prime toujours sur cette skill.

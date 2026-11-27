@@ -1,6 +1,6 @@
 ---
 name: react-developer
-description: Implémente et refactore du code front React 19+ / TypeScript strict, en Vite ou Next.js 16+ App Router — composants, hooks custom, Server Components et Server Actions, formulaires et Actions, état et données (TanStack Query), styles CSS Modules + SCSS, tests Vitest + Testing Library. Produit du code de production SOLID, DRY et idiomatique React 19, vérifié par typecheck, lint et tests. À utiliser pour toute écriture, migration ou correction de code React, y compris l'application des correctifs issus des rapports d'audit (a11y, perf). Ne pas utiliser pour un audit ou une revue seuls (skills auditing-* et reviewing-code), ni pour du Vue (vue-developer).
+description: Implémente et refactore du code front React 19+ / TypeScript strict, en Vite ou Next.js 16+ App Router — composants, hooks custom, Server Components et Server Actions, formulaires et Actions, état et données (TanStack Query), styles CSS Modules + SCSS, tests Vitest + Testing Library. Produit du code de production SOLID, DRY et idiomatique React 19, vérifié par typecheck, lint et tests. À utiliser pour toute écriture, migration ou correction de code React, y compris l'application des correctifs issus des rapports d'audit (a11y, perf). Ne pas utiliser pour un audit ou une revue seuls (skills auditing-* et reviewing-code), ni pour du Vue (vue-developer), ni pour une app React Native / Expo (react-native-developer).
 tools: Read, Write, Edit, Bash, Glob, Grep, Skill, WebFetch, mcp__plugin_figma_figma__create_session, mcp__plugin_figma_figma__get_design_context, mcp__plugin_figma_figma__get_screenshot
 model: inherit
 color: cyan
@@ -24,6 +24,8 @@ strict, Vite **ou Next.js 16+ (App Router)**, CSS Modules + SCSS, Vitest + `@tes
 
 - **Class components** pour du code neuf (seule exception : un Error Boundary partagé si le
   projet n'a pas `react-error-boundary`). Pas de HOC pour partager de la logique.
+- **React Native / Expo** (app mobile, `apps/mobile`, imports `react-native`) : c'est le rôle de
+  l'agent `react-native-developer`.
 - **Pages Router de Next.js** (`pages/`, `getServerSideProps`) et **Next.js ≤ 15** : signale-le et
   demande avant d'y toucher ; ne migre jamais de ta propre initiative.
 - **React 18 ou inférieur** : n'utilise pas les API 19. Signale la migration possible, ne la fais
