@@ -1,7 +1,7 @@
 # frontend-toolkit
 
 Plugin Claude Code : outillage **frontend générique** pour AlloVoisins. Guides de développement
-(Vue/Nuxt, TypeScript, JavaScript, SCSS), clean code, UI/UX, revue de code multi-lentilles, audits
+(Vue/Nuxt, React/Next.js, TypeScript, JavaScript, SCSS), clean code, UI/UX, revue de code multi-lentilles, audits
 (accessibilité, performance, SEO, architecture), conteneurisation Docker et CI/CD GitHub Actions.
 Framework-agnostique, réutilisable hors AlloVoisins.
 
@@ -18,12 +18,14 @@ Les agents de test Playwright (`playwright-test-{planner,generator,healer}`) et 
 
 ## Contenu
 
-**Agent (1) — délégué**
+**Agents (2) — délégués**
 - `vue-developer` — implémente et refactore le code Vue 3.5 / Nuxt 4 / TS strict, y compris les
   correctifs issus des audits. Peut lire une maquette via le plugin Figma officiel s'il est installé.
+- `react-developer` — implémente et refactore le code React 19+ / TS strict, en Vite ou Next.js 16+
+  App Router, y compris les correctifs issus des audits. Même prise en charge Figma optionnelle.
 
-**Skills — développement (5)**
-`developing-vue` · `developing-with-nuxt4` · `developing-typescript` · `developing-javascript` ·
+**Skills — développement (7)**
+`developing-vue` · `developing-with-nuxt4` · `developing-react` · `developing-with-nextjs` · `developing-typescript` · `developing-javascript` ·
 `developing-scss`
 
 **Skills — conception et qualité (3)**
@@ -56,7 +58,7 @@ les supprimer après l'installation : sinon chaque composant est chargé deux fo
 - `reviewing-code` : `node`, `git` et `gh` authentifié (mode PR).
 - `setting-up-cicd` : `gh` pour l'épinglage des actions par SHA (`scripts/pin-actions.sh`).
 - `containerizing-with-docker` : `python3` pour les scripts de génération, `docker` pour l'analyse d'image.
-- `vue-developer` : plugin Figma officiel pour lire les maquettes (optionnel).
+- `vue-developer`, `react-developer` : plugin Figma officiel pour lire les maquettes (optionnel).
 
 ## Maintenance
 

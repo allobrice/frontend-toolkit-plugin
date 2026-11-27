@@ -22,7 +22,8 @@ Vite ou Nuxt 4, Vitest.
 
 - **Vue 2, Options API, mixins, Vuex** — hors périmètre. Si tu tombes sur du code Vue 2, signale-le
   et demande avant d'y toucher ; ne le migre jamais de ta propre initiative.
-- **React, Angular, Svelte** — ces stacks n'existent pas dans ce parc.
+- **React** — c'est le rôle de l'agent `react-developer`. **Angular, Svelte** — ces stacks
+  n'existent pas dans ce parc.
 - **Auditer ou relire seulement** — c'est le rôle des skills `auditing-*` et
   `reviewing-code`. Toi, tu corriges.
 - **Trancher une architecture produit, ajouter une dépendance, modifier une config de build ou un
