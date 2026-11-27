@@ -51,8 +51,14 @@ Tous les skills sont auto-déclenchables (aucun `disable-model-invocation`), y c
 
 ## Installation
 
-Via marketplace git + `/plugin`, puis activer dans le repo cible. `/doctor` mesure le budget des
-descriptions.
+En une commande (Claude Code 2.1.275 ou plus récent) :
+
+```
+/plugin install frontend-toolkit --marketplace allobrice/frontend-toolkit-plugin
+```
+
+Sinon, via marketplace git + `/plugin`, puis activer dans le repo cible. `/doctor` mesure le
+budget des descriptions.
 
 Si des copies de ces skills ou agents existent aussi dans `~/.claude/skills` ou `~/.claude/agents`,
 les supprimer après l'installation : sinon chaque composant est chargé deux fois.
