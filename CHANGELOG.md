@@ -30,6 +30,8 @@ suppression de composant, patch pour une correction.
 - `evals/` : 6 cas `claude plugin eval` (déclenchement, non-déclenchement sur du React web,
   hors ligne, accessibilité, stockage d'un token, mode sombre sans SCSS).
 - `CHANGELOG.md`.
+- Icône du plugin (`.claude-plugin/icon.png`, 1024 × 1024) et description de la marketplace :
+  `claude plugin validate . --strict` passe sans avertissement.
 
 ### Modifié
 

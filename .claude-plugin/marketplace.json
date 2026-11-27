@@ -2,6 +2,7 @@
   "$schema": "https://json.schemastore.org/claude-code-marketplace.json",
   "name": "frontend-toolkit-marketplace",
   "owner": { "name": "Brice" },
+  "description": "Marketplace mono-plugin de frontend-toolkit : guides de développement Vue/Nuxt, React/Next.js, React Native (Expo), TypeScript, JavaScript et SCSS, agents développeurs, revue de code et audits (accessibilité, performance, SEO, architecture), Docker et CI/CD.",
   "plugins": [
     {
       "name": "frontend-toolkit",
