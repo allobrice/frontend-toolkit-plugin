@@ -333,3 +333,6 @@ $RECYCLE.BIN/
 # End of https://www.toptal.com/developers/gitignore/api/node,macos,windows,jetbrains,visualstudiocode
 ### WSL ###
 *:Zone.Identifier
+
+# claude plugin eval
+evals/results/

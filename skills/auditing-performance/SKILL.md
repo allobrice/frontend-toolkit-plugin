@@ -11,7 +11,8 @@ description: >
   "third party scripts lents", ou toute demande d'évaluation perf front. Déclencher AUSSI en mode
   préventif lors de la génération de composants à fort impact perf (listes longues, images
   above-the-fold, fonts custom, hydration SSR, lazy/dynamic imports) afin d'appliquer les bonnes
-  pratiques dès l'écriture. Maîtrise Vue/Nuxt + React/Next.
+  pratiques dès l'écriture. Maîtrise Vue/Nuxt + React/Next. Web uniquement : pour une app React Native / Expo,
+  utiliser developing-react-native (référence lists-and-performance.md).
 ---
 
 # Auditor Performance

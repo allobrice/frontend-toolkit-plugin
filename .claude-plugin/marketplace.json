@@ -6,7 +6,7 @@
     {
       "name": "frontend-toolkit",
       "source": "./",
-      "description": "Generic frontend tooling: Vue/Nuxt/React/Next.js/TS/JS/SCSS guides, clean code, UI/UX, code review, a11y/perf/SEO/architecture audits, Docker and CI/CD."
+      "description": "Generic frontend tooling: Vue/Nuxt/React/Next.js/React Native (Expo)/TS/JS/SCSS guides, clean code, UI/UX, code review, a11y/perf/SEO/architecture audits, Docker and CI/CD."
     }
   ]
 }
